@@ -62,8 +62,8 @@ h2.active::after {
     transform: rotate(-90deg);
 }
 
-ul {
-    list-style-type: none;
+div.desaparece {
+    /* list-style-type: disc; */
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -71,6 +71,7 @@ ul {
     transition: max-height 0.3s ease;
 }
 
-ul.active {
-    max-height: 200px;
+.desaparece.active {
+    max-height: 800px; 
+    overflow: visible; /* Garante que o conteúdo seja visível quando expandido */
 }

@@ -1,17 +1,14 @@
-const titles = document.querySelectorAll('h2');
+document.addEventListener("DOMContentLoaded", function() {
+    var collapsibles = document.querySelectorAll(".collapsible");
 
-titles.forEach(title => {
-    title.addEventListener('click', () => {
-        const section = title.parentElement; 
-        const content = section.querySelector('ul, p'); 
+    collapsibles.forEach(function(collapsible) {
+        var header = collapsible.querySelector("h2");
+        var content = collapsible.querySelector(".desaparece");
 
-        title.classList.toggle('active');
-        content.classList.toggle('active');
-
-        if (content.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-            content.style.maxHeight = null;
-        }
+        // Adiciona um evento de clique no cabeçalho
+        header.addEventListener("click", function() {
+            // Alternando a classe 'active' na div de conteúdo
+            content.classList.toggle("active");
+        });
     });
 });
